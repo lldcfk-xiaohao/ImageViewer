@@ -429,7 +429,7 @@ class CFKViewer:
 
         # ── 主画布 ──
         self.canvas = tk.Canvas(self.root, bg=CANVAS_BG,
-                                highlightthickness=0, cursor="crosshair")
+                                highlightthickness=0)
         self.canvas.pack(fill=tk.BOTH, expand=True)
 
         self.canvas.bind("<ButtonPress-1>", self._drag_start_cb)
@@ -492,43 +492,50 @@ class CFKViewer:
     # ── 欢迎页（CFKViewer 风格）──
     def _show_welcome(self):
         self.canvas.delete("all")
-        w = self.canvas.winfo_width() or 800
-        h = self.canvas.winfo_height() or 600
-        cx, cy = w // 2, h // 2
+        self.canvas.config(cursor="")
+        # 延迟绘制，确保 canvas 已完成布局拿到真实尺寸
+        self.root.after(50, self._draw_welcome)
 
-        # 绘制图标（SVG 风格的图片占位符）
-        icon_size = 64
-        ix, iy = cx - icon_size // 2, cy - 80
-        self.canvas.create_rectangle(ix, iy, ix + icon_size, iy + icon_size,
-                                     outline="#BBBBBB", width=2)
-        self.canvas.create_line(ix + 16, iy + 36, ix + 32, iy + 18, fill="#BBBBBB", width=2)
-        self.canvas.create_line(ix + 32, iy + 18, ix + 48, iy + 48, fill="#BBBBBB", width=2)
-        self.canvas.create_oval(ix + 38, iy + 22, ix + 48, iy + 32, outline="#BBBBBB", width=2)
+    def _draw_welcome(self):
+        if not self.image_list:
+            self.canvas.delete("all")
+            w = max(self.canvas.winfo_width(), 800)
+            h = max(self.canvas.winfo_height(), 600)
+            cx, cy = w // 2, h // 2
 
-        self.canvas.create_text(cx, cy + 15,
-                                text=self.t("welcome_drag"),
-                                font=("Microsoft YaHei UI", 14),
-                                fill=TEXT_PRIMARY)
-        self.canvas.create_text(cx, cy + 45,
-                                text=self.t("welcome_formats"),
-                                font=("Microsoft YaHei UI", 11),
-                                fill=TEXT_SECONDARY)
+            # 绘制图标（SVG 风格的图片占位符）
+            icon_size = 64
+            ix, iy = cx - icon_size // 2, cy - 80
+            self.canvas.create_rectangle(ix, iy, ix + icon_size, iy + icon_size,
+                                         outline="#BBBBBB", width=2)
+            self.canvas.create_line(ix + 16, iy + 36, ix + 32, iy + 18, fill="#BBBBBB", width=2)
+            self.canvas.create_line(ix + 32, iy + 18, ix + 48, iy + 48, fill="#BBBBBB", width=2)
+            self.canvas.create_oval(ix + 38, iy + 22, ix + 48, iy + 32, outline="#BBBBBB", width=2)
 
-        # 打开图片按钮
-        bw, bh = 96, 32
-        bx, by = cx - bw // 2, cy + 70
-        self.welcome_btn = self.canvas.create_rectangle(
-            bx, by, bx + bw, by + bh,
-            outline=BTN_BORDER, fill=BG_COLOR, width=1)
-        self.canvas.create_text(cx, by + bh // 2,
-                                text=self.t("welcome_open_btn"),
-                                font=("Microsoft YaHei UI", 10),
-                                fill=TEXT_PRIMARY, tags="welcome_btn_text")
-        self.canvas.tag_bind(self.welcome_btn, "<Button-1>", lambda e: self.open_file())
-        self.canvas.tag_bind(self.welcome_btn, "<Enter>",
-                             lambda e: [self.canvas.itemconfig(self.welcome_btn, fill=BTN_HOVER_BG)])
-        self.canvas.tag_bind(self.welcome_btn, "<Leave>",
-                             lambda e: [self.canvas.itemconfig(self.welcome_btn, fill=BG_COLOR)])
+            self.canvas.create_text(cx, cy + 15,
+                                    text=self.t("welcome_drag"),
+                                    font=("Microsoft YaHei UI", 14),
+                                    fill=TEXT_PRIMARY)
+            self.canvas.create_text(cx, cy + 45,
+                                    text=self.t("welcome_formats"),
+                                    font=("Microsoft YaHei UI", 11),
+                                    fill=TEXT_SECONDARY)
+
+            # 打开图片按钮
+            bw, bh = 96, 32
+            bx, by = cx - bw // 2, cy + 70
+            self.welcome_btn = self.canvas.create_rectangle(
+                bx, by, bx + bw, by + bh,
+                outline=BTN_BORDER, fill=BG_COLOR, width=1)
+            self.canvas.create_text(cx, by + bh // 2,
+                                    text=self.t("welcome_open_btn"),
+                                    font=("Microsoft YaHei UI", 10),
+                                    fill=TEXT_PRIMARY, tags="welcome_btn_text")
+            self.canvas.tag_bind(self.welcome_btn, "<Button-1>", lambda e: self.open_file())
+            self.canvas.tag_bind(self.welcome_btn, "<Enter>",
+                                 lambda e: [self.canvas.itemconfig(self.welcome_btn, fill=BTN_HOVER_BG)])
+            self.canvas.tag_bind(self.welcome_btn, "<Leave>",
+                                 lambda e: [self.canvas.itemconfig(self.welcome_btn, fill=BG_COLOR)])
 
     # ── 右键上下文菜单 ──
     def _show_context_menu(self, event):
@@ -736,6 +743,7 @@ class CFKViewer:
         if self.fit_mode:
             self.zoom_factor = self._calc_fit_zoom()
         self._canvas_offset = [0, 0]
+        self.canvas.config(cursor="fleur")
         self._render()
         self._update_status()
 
