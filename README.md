@@ -1,14 +1,14 @@
-# GuoheView 🖼
+# CFKViewer 🖼
 
 > 极简看图软件 — 轻量、快速、多语言、零依赖运行
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-green.svg)](https://python.org)
-[![Version](https://img.shields.io/badge/Version-2.0.0-orange.svg)](#)
+[![Version](https://img.shields.io/badge/Version-2.0.1-orange.svg)](#)
 
 ---
 
-## v2.0.0 — GuoheView 风格重制
+## v2.0.0 — CFKViewer 风格重制
 
 | 特性 | 说明 |
 |------|------|
@@ -16,12 +16,12 @@
 | 🖱 右键上下文菜单 | 复制图片/文件/路径、另存为、打印、打开位置、删除等 |
 | ⚙️ 设置对话框 | 语言切换、幻灯片速度、启动选项 |
 | 🌐 多语言 | 简体中文 / English / 繁體中文 / 日本語，一键切换 |
-| 💾 偏好记忆 | 配置保存至 `~/.guoheview/config.json` |
+| 💾 偏好记忆 | 配置保存至 `~/.cfkviewer/config.json` |
 | 🔝 窗口置顶 / 无边框模式 / 全屏 | 三种窗口模式随心切换 |
 
 ## 界面预览
 
-### 欢迎页（GuoheView 风格）
+### 欢迎页（CFKViewer 风格）
 - 居中的图标 + 提示文字 + 打开按钮
 - 支持拖拽文件进入
 - 底部状态栏带导航控件
@@ -102,7 +102,7 @@ python viewer.py
 
 ### 直接使用 EXE（推荐）
 
-下载 [dist/GuoheView.exe](dist/) 即可直接运行，无需安装任何依赖。
+下载 [dist/CFKViewer.exe](dist/) 即可直接运行，无需安装任何依赖。
 
 ## 键盘快捷键
 
@@ -129,11 +129,11 @@ python viewer.py
 
 ```
 image-viewer/
-├── viewer.py           # 主程序 (v2.0.0, ~1250 行)
-├── GuoheView.spec      # PyInstaller 打包配置
+├── viewer.py           # 主程序 (v2.0.1, ~1250 行)
+├── CFKViewer.spec      # PyInstaller 打包配置
 ├── ImageViewer.spec    # 旧版打包配置（保留）
 ├── dist/
-│   └── GuoheView.exe   # 打包产物
+│   └── CFKViewer.exe   # 打包产物
 ├── LICENSE             # MIT 许可证
 ├── requirements.txt    # Python 依赖
 └── README.md           # 本文件
@@ -145,8 +145,8 @@ image-viewer/
 
 | 平台 | 路径 |
 |------|------|
-| Windows | `C:\Users\<用户名>\.guoheview\config.json` |
-| Linux / macOS | `~/.guoheview/config.json` |
+| Windows | `C:\Users\<用户名>\.cfkviewer\config.json` |
+| Linux / macOS | `~/.cfkviewer/config.json` |
 
 ```json
 {
@@ -164,7 +164,11 @@ image-viewer/
 
 ## 版本历史
 
-### v2.0.0 — GuoheView 重制
+### v2.0.1 — 更名 CFKViewer
+- 程序更名为 CFKViewer
+- 配置目录迁移至 `~/.cfkviewer/`
+
+### v2.0.0 — CFKViewer 重制
 - 全新极简白色主题 UI
 - 移除顶部工具栏，改用右键上下文菜单驱动
 - 新增：复制图片/文件/路径到剪贴板

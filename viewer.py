@@ -1,7 +1,7 @@
 """
-GuoheView - 极简看图软件
+CFKViewer - 极简看图软件
 MIT License
-Version: 2.0.0  (GuoheView 风格重制 + 多语言)
+Version: 2.0.1  (CFKViewer 风格重制 + 多语言)
 """
 
 import os
@@ -26,10 +26,10 @@ SUPPORTED_EXTS = {
     ".pgm", ".pbm", ".pnm", ".svg"
 }
 
-APP_TITLE = "GuoheView"
-VERSION = "2.0.0"
+APP_TITLE = "CFKViewer"
+VERSION = "2.0.1"
 
-# ═══ GuoheView 风格：亮色主题 ═══
+# ═══ CFKViewer 风格：亮色主题 ═══
 BG_COLOR = "#FFFFFF"
 CANVAS_BG = "#F7F7F7"
 PANEL_COLOR = "#F0F0F0"
@@ -43,7 +43,7 @@ HOVER_BTN_BG = "#4A90D9"
 HOVER_BTN_FG = "#FFFFFF"
 MENU_BG = "#FAFAFA"
 
-CONFIG_DIR = Path.home() / ".guoheview"
+CONFIG_DIR = Path.home() / ".cfkviewer"
 CONFIG_FILE = CONFIG_DIR / "config.json"
 
 
@@ -372,7 +372,7 @@ def save_config(config: dict):
 
 # ──────────────────────────── 主程序 ────────────────────────────
 
-class GuoheView:
+class CFKViewer:
     def __init__(self, root: tk.Tk):
         self.root = root
         self.root.title(APP_TITLE)
@@ -489,7 +489,7 @@ class GuoheView:
             self._show_welcome()
         self._update_status()
 
-    # ── 欢迎页（GuoheView 风格）──
+    # ── 欢迎页（CFKViewer 风格）──
     def _show_welcome(self):
         self.canvas.delete("all")
         w = self.canvas.winfo_width() or 800
@@ -1241,7 +1241,7 @@ def main():
         except Exception:
             pass
 
-    app = GuoheView(root)
+    app = CFKViewer(root)
     root.mainloop()
 
 
