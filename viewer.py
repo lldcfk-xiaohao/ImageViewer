@@ -27,7 +27,7 @@ SUPPORTED_EXTS = {
 }
 
 APP_TITLE = "CFKViewer"
-VERSION = "2.0.1"
+VERSION = "2.1.0"
 
 # ═══ CFKViewer 风格：亮色主题 ═══
 BG_COLOR = "#FFFFFF"
@@ -90,13 +90,66 @@ class I18n:
             "sub_copy_path":        "复制路径",
             "sub_copy_filename":    "复制文件名",
             "sub_copy_size":        "复制尺寸",
-            # 设置对话框
+            # 设置对话框（旧版保留兼容）
             "dlg_title_settings":   "设置",
             "set_language":         "语言",
             "set_slideshow_speed":  "幻灯片速度（秒）",
             "set_startup_folder":   "启动时打开上次文件夹",
             "set_close":            "关闭",
             "set_ok":               "确定",
+            # ═══ 设置页面（GuoheView 风格）═══
+            "stg_nav_general":      "常规设置",
+            "stg_nav_image":        "图片处理",
+            "stg_nav_actions":      "动作",
+            "stg_nav_shortcuts":    "快捷键",
+            "stg_nav_about":        "关于",
+            # 常规设置
+            "stg_lang":             "语言",
+            "stg_dark_mode":        "深色模式",
+            "stg_canvas_bg":        "画布背景",
+            "stg_bg_checkerboard":  "棋盘",
+            "stg_bg_white":         "纯白",
+            "stg_bg_black":         "纯黑",
+            "stg_show_thumb":       "显示缩略图",
+            "stg_startup_folder":   "启动时打开上次文件夹",
+            "stg_slideshow_speed":  "幻灯片速度（秒）",
+            # 图片处理
+            "stg_antialias":        "图片抗锯齿",
+            "stg_icc_profile":      "色彩管理 (ICC)",
+            "stg_use_image_icc":    "使用图片 ICC profile",
+            "stg_use_monitor_icc":  "使用显示器 ICC profile",
+            "stg_use_srgb":         "使用软件自带 ICC profile",
+            # 动作
+            "stg_mouse_wheel":      "鼠标滚轮",
+            "stg_wheel_zoom":       "缩放图片",
+            "stg_wheel_switch":     "切换图片",
+            "stg_no_confirm_del":   "删除文件不提示",
+            "stg_del_to_recycle":   "删除后放入回收站",
+            "stg_del_recycle_hint": "开启后删除的图片进入回收站可找回；关闭则永久删除。删除确认框中的勾选与此项同步",
+            # 快捷键
+            "stk_open_img":         "打开图片",
+            "stk_open_loc":         "打开文件位置",
+            "stk_prev":             "上一张",
+            "stk_next":             "下一张",
+            "stk_zoom_in":          "放大",
+            "stk_zoom_out":         "缩小",
+            "stk_fit_window":       "适应窗口",
+            "stk_actual_size":      "实际大小",
+            "stk_rotate_right":     "向右旋转",
+            "stk_rotate_left":      "向左旋转",
+            "stk_delete":           "删除图片",
+            "stk_settings":         "设置",
+            "stk_fullscreen":       "全屏模式",
+            "stk_exit":             "退出软件",
+            "stk_unbound":          "未设置",
+            # 关于
+            "stg_app_name":         "CFKViewer",
+            "stg_version":          "版本号",
+            "stg_build":            "内部版本号",
+            "stg_check_update":     "检查更新",
+            "stg_website":          "官网",
+            "stg_qq_group":         "QQ群",
+            "stg_about_desc":       "极简看图软件",
             # 信息对话框
             "info_title":           "图片信息",
             "label_filename":       "文件名",
@@ -163,12 +216,66 @@ class I18n:
             "sub_copy_path":        "Copy Path",
             "sub_copy_filename":    "Copy Filename",
             "sub_copy_size":        "Copy Dimensions",
+            # 设置对话框（旧版保留兼容）
             "dlg_title_settings":   "Settings",
             "set_language":         "Language",
             "set_slideshow_speed":  "Slideshow Speed (sec)",
             "set_startup_folder":   "Reopen last folder on startup",
             "set_close":            "Close",
             "set_ok":               "OK",
+            # ═══ Settings Pages (GuoheView style) ═══
+            "stg_nav_general":      "General",
+            "stg_nav_image":        "Image",
+            "stg_nav_actions":      "Actions",
+            "stg_nav_shortcuts":    "Shortcuts",
+            "stg_nav_about":        "About",
+            # General
+            "stg_lang":             "Language",
+            "stg_dark_mode":        "Dark Mode",
+            "stg_canvas_bg":        "Canvas Background",
+            "stg_bg_checkerboard":  "Checkerboard",
+            "stg_bg_white":         "White",
+            "stg_bg_black":         "Black",
+            "stg_show_thumb":       "Show Thumbnails",
+            "stg_startup_folder":   "Reopen last folder on startup",
+            "stg_slideshow_speed":  "Slideshow Speed (sec)",
+            # Image Processing
+            "stg_antialias":        "Antialiasing",
+            "stg_icc_profile":      "Color Management (ICC)",
+            "stg_use_image_icc":    "Use image ICC profile",
+            "stg_use_monitor_icc":  "Use monitor ICC profile",
+            "stg_use_srgb":         "Use built-in sRGB profile",
+            # Actions
+            "stg_mouse_wheel":      "Mouse Wheel",
+            "stg_wheel_zoom":       "Zoom Image",
+            "stg_wheel_switch":     "Switch Image",
+            "stg_no_confirm_del":   "Skip delete confirmation",
+            "stg_del_to_recycle":   "Move to Recycle Bin",
+            "stg_del_recycle_hint": "When enabled, deleted images go to Recycle Bin; otherwise they are permanently deleted.",
+            # Shortcuts
+            "stk_open_img":         "Open Image",
+            "stk_open_loc":         "Open Location",
+            "stk_prev":             "Previous",
+            "stk_next":             "Next",
+            "stk_zoom_in":          "Zoom In",
+            "stk_zoom_out":         "Zoom Out",
+            "stk_fit_window":       "Fit Window",
+            "stk_actual_size":      "Actual Size",
+            "stk_rotate_right":     "Rotate Right",
+            "stk_rotate_left":      "Rotate Left",
+            "stk_delete":           "Delete Image",
+            "stk_settings":         "Settings",
+            "stk_fullscreen":       "Fullscreen",
+            "stk_exit":             "Exit",
+            "stk_unbound":          "Unbound",
+            # About
+            "stg_app_name":         "CFKViewer",
+            "stg_version":          "Version",
+            "stg_build":            "Build",
+            "stg_check_update":     "Check Update",
+            "stg_website":          "Website",
+            "stg_qq_group":         "QQ Group",
+            "stg_about_desc":       "Minimalist Image Viewer",
             "info_title":           "Image Info",
             "label_filename":       "File Name",
             "label_path":           "Path",
@@ -230,12 +337,66 @@ class I18n:
             "sub_copy_path":        "複製路徑",
             "sub_copy_filename":    "複製檔案名",
             "sub_copy_size":        "複製尺寸",
+            # 設定對話框（舊版保留相容）
             "dlg_title_settings":   "設定",
             "set_language":         "語言",
             "set_slideshow_speed":  "投影片速度（秒）",
             "set_startup_folder":   "啟動時開啟上次資料夾",
             "set_close":            "關閉",
             "set_ok":               "確定",
+            # ═══ 設定頁面（GuoheView 風格）═══
+            "stg_nav_general":      "一般設定",
+            "stg_nav_image":        "圖片處理",
+            "stg_nav_actions":      "動作",
+            "stg_nav_shortcuts":    "快速鍵",
+            "stg_nav_about":        "關於",
+            # 一般設定
+            "stg_lang":             "語言",
+            "stg_dark_mode":        "深色模式",
+            "stg_canvas_bg":        "畫布背景",
+            "stg_bg_checkerboard":  "棋盤",
+            "stg_bg_white":         "純白",
+            "stg_bg_black":         "純黑",
+            "stg_show_thumb":       "顯示縮略圖",
+            "stg_startup_folder":   "啟動時開啟上次資料夾",
+            "stg_slideshow_speed":  "投影片速度（秒）",
+            # 圖片處理
+            "stg_antialias":        "圖片抗鋸齒",
+            "stg_icc_profile":      "色彩管理 (ICC)",
+            "stg_use_image_icc":    "使用圖片 ICC profile",
+            "stg_use_monitor_icc":  "使用顯示器 ICC profile",
+            "stg_use_srgb":         "使用軟體內建 ICC profile",
+            # 動作
+            "stg_mouse_wheel":      "滑鼠滾輪",
+            "stg_wheel_zoom":       "縮放圖片",
+            "stg_wheel_switch":     "切換圖片",
+            "stg_no_confirm_del":   "刪除檔案不提示",
+            "stg_del_to_recycle":   "刪除後放入回收桶",
+            "stg_del_recycle_hint": "開啟後刪除的圖片進入回收桶可找回；關閉則永久刪除。刪除確認框中的勾選與此項同步",
+            # 快速鍵
+            "stk_open_img":         "開啟圖片",
+            "stk_open_loc":         "開啟檔案位置",
+            "stk_prev":             "上一張",
+            "stk_next":             "下一張",
+            "stk_zoom_in":          "放大",
+            "stk_zoom_out":         "縮小",
+            "stk_fit_window":       "適應視窗",
+            "stk_actual_size":      "實際大小",
+            "stk_rotate_right":     "向右旋轉",
+            "stk_rotate_left":      "向左旋轉",
+            "stk_delete":           "刪除圖片",
+            "stk_settings":         "設定",
+            "stk_fullscreen":       "全螢幕模式",
+            "stk_exit":             "退出軟體",
+            "stk_unbound":          "未設定",
+            # 關於
+            "stg_app_name":         "CFKViewer",
+            "stg_version":          "版本號",
+            "stg_build":            "內部版本號",
+            "stg_check_update":     "檢查更新",
+            "stg_website":          "官網",
+            "stg_qq_group":         "QQ群",
+            "stg_about_desc":       "極簡看圖軟體",
             "info_title":           "圖片資訊",
             "label_filename":       "檔案名稱",
             "label_path":           "路徑",
@@ -297,12 +458,66 @@ class I18n:
             "sub_copy_path":        "パスをコピー",
             "sub_copy_filename":    "ファイル名をコピー",
             "sub_copy_size":        "サイズをコピー",
+            # 設定ダイアログ（旧版互換）
             "dlg_title_settings":   "設定",
             "set_language":         "言語",
             "set_slideshow_speed":  "スライドショー間隔（秒）",
             "set_startup_folder":   "起動時に最後のフォルダを再開",
             "set_close":            "閉じる",
             "set_ok":               "OK",
+            # ═══ 設定ページ（GuoheView スタイル）═══
+            "stg_nav_general":      "一般設定",
+            "stg_nav_image":        "画像処理",
+            "stg_nav_actions":      "アクション",
+            "stg_nav_shortcuts":    "ショートカット",
+            "stg_nav_about":        "について",
+            # 一般設定
+            "stg_lang":             "言語",
+            "stg_dark_mode":        "ダークモード",
+            "stg_canvas_bg":        "キャンバス背景",
+            "stg_bg_checkerboard":  "チェックボード",
+            "stg_bg_white":         "白",
+            "stg_bg_black":         "黒",
+            "stg_show_thumb":       "サムネイル表示",
+            "stg_startup_folder":   "起動時に最後のフォルダを再開",
+            "stg_slideshow_speed":  "スライドショー間隔（秒）",
+            # 画像処理
+            "stg_antialias":        "アンチエイリアス",
+            "stg_icc_profile":      "カラー管理 (ICC)",
+            "stg_use_image_icc":    "画像 ICC profile を使用",
+            "stg_use_monitor_icc":  "モニター ICC profile を使用",
+            "stg_use_srgb":         "内蔵 sRGB profile を使用",
+            # アクション
+            "stg_mouse_wheel":      "マウスホイール",
+            "stg_wheel_zoom":       "画像ズーム",
+            "stg_wheel_switch":     "画像切り替え",
+            "stg_no_confirm_del":   "削除確認をスキップ",
+            "stg_del_to_recycle":   "ゴミ箱に移動",
+            "stg_del_recycle_hint": "有効時は削除した画像がゴミ箱へ移動；無効時は完全削除。",
+            # ショートカット
+            "stk_open_img":         "画像を開く",
+            "stk_open_loc":         "位置を開く",
+            "stk_prev":             "前へ",
+            "stk_next":             "次へ",
+            "stk_zoom_in":          "拡大",
+            "stk_zoom_out":         "縮小",
+            "stk_fit_window":       "ウィンドウに合わせる",
+            "stk_actual_size":      "実際サイズ",
+            "stk_rotate_right":     "右回転",
+            "stk_rotate_left":      "左回転",
+            "stk_delete":           "画像削除",
+            "stk_settings":         "設定",
+            "stk_fullscreen":       "フルスクリーン",
+            "stk_exit":             "終了",
+            "stk_unbound":          "未設定",
+            # について
+            "stg_app_name":         "CFKViewer",
+            "stg_version":          "バージョン",
+            "stg_build":            "ビルド番号",
+            "stg_check_update":     "更新チェック",
+            "stg_website":          "公式サイト",
+            "stg_qq_group":         "QQグループ",
+            "stg_about_desc":       "ミニマル画像ビューア",
             "info_title":           "画像情報",
             "label_filename":       "ファイル名",
             "label_path":           "パス",
@@ -1092,73 +1307,357 @@ class CFKViewer:
             return
         subprocess.Popen(["mspaint", str(self.image_list[self.current_index])])
 
-    # ═══════════════════ 设置 ═══════════════════
+    # ═══════════════════ 设置（GuoheView 风格多页） ═══════════════════
 
     def show_settings(self):
         top = tk.Toplevel(self.root)
-        top.title(self.t("dlg_title_settings"))
-        top.geometry("400x280")
-        top.configure(bg=BG_COLOR)
+        top.title(f"设置 - {APP_TITLE}")
+        top.geometry("780x520")
+        top.configure(bg="#FFFFFF")
         top.transient(self.root)
         top.grab_set()
-        top.resizable(False, False)
+        top.resizable(True, True)
+        top.minsize(700, 450)
 
         # 居中
         top.update_idletasks()
-        x = self.root.winfo_x() + (self.root.winfo_width() - 400) // 2
-        y = self.root.winfo_y() + (self.root.winfo_height() - 280) // 2
+        x = self.root.winfo_x() + (self.root.winfo_width() - 780) // 2
+        y = self.root.winfo_y() + (self.root.winfo_height() - 520) // 2
         top.geometry(f"+{x}+{y}")
 
-        frame = tk.Frame(top, bg=BG_COLOR, padx=24, pady=20)
-        frame.pack(fill=tk.BOTH, expand=True)
+        # ── 左侧导航栏 ──
+        sidebar = tk.Frame(top, bg="#F5F5F5", width=170)
+        sidebar.pack(side=tk.LEFT, fill=tk.Y)
+        sidebar.pack_propagate(False)
 
-        # 语言选择
-        tk.Label(frame, text=self.t("set_language"), bg=BG_COLOR, fg=TEXT_PRIMARY,
-                 font=("Microsoft YaHei UI", 11)).grid(row=0, column=0, sticky="w", pady=(0, 4))
-        lang_var = tk.StringVar(value=self.i18n.lang)
-        lang_combo = ttk.Combobox(frame, textvariable=lang_var,
-                                   values=list(I18n.LANGUAGES.values()), state="readonly", width=20)
-        lang_combo.grid(row=1, column=0, sticky="w", pady=(0, 16))
+        nav_items = [
+            ("stg_nav_general",   "\u2600",  "常规设置"),
+            ("stg_nav_image",     "\U0001f5bc\uFE0F", "图片处理"),
+            ("stg_nav_actions",   "\u2699\uFE0F", "动作"),
+            ("stg_nav_shortcuts", "\u2328\uFE0F", "快捷键"),
+            ("stg_nav_about",     "\u2139\uFE0F", "关于"),
+        ]
 
-        # 幻灯片速度
-        tk.Label(frame, text=self.t("set_slideshow_speed"), bg=BG_COLOR, fg=TEXT_PRIMARY,
-                 font=("Microsoft YaHei UI", 11)).grid(row=2, column=0, sticky="w", pady=(0, 4))
+        nav_btns = []
+        selected_nav = tk.IntVar(value=0)
+
+        def _switch_page(idx):
+            selected_nav.set(idx)
+            for i, btn in enumerate(nav_btns):
+                if i == idx:
+                    btn.config(bg="#FFFFFF", fg=TEXT_PRIMARY,
+                              font=("Microsoft YaHei UI", 10, "bold"))
+                    # 蓝色左边指示条
+                    btn.left_bar.config(bg="#4A90D9")
+                    sidebar.config(bg="#E8E8E8")
+                else:
+                    btn.config(bg="#F5F5F5", fg=TEXT_PRIMARY,
+                              font=("Microsoft YaHei UI", 10))
+                    btn.left_bar.config(bg="#F5F5F5")
+            # 切换内容页
+            for w in content_frame.winfo_children():
+                w.destroy()
+            page_builders[idx]()
+
+        for i, (key, icon, label) in enumerate(nav_items):
+            item_frame = tk.Frame(sidebar, bg="#F5F5F5", cursor="hand2")
+            item_frame.pack(fill=tk.X, padx=(4, 0), pady=1)
+            item_frame.pack_propagate(False)
+
+            left_bar = tk.Frame(item_frame, bg="#F5F5F5", width=3)
+            left_bar.pack(side=tk.LEFT, fill=tk.Y)
+            item_frame.left_bar = left_bar
+
+            btn = tk.Label(item_frame, text=f"{icon}  {self.t(key)}",
+                          bg="#F5F5F5", fg=TEXT_PRIMARY if i != 0 else TEXT_PRIMARY,
+                          font=("Microsoft YaHei UI", 10, "bold" if i == 0 else ""),
+                          anchor="w", padx=14, pady=10, cursor="hand2")
+            btn.pack(fill=tk.X)
+            btn.left_bar = left_bar
+            btn.index = i
+            nav_btns.append(btn)
+
+            def _enter(e, b=btn, i=i):
+                if i != selected_nav.get(): b.config(bg="#EEEEEE")
+                b.left_bar.config(bg="#CCCCCC")
+            def _leave(e, b=btn, i=i):
+                if i != selected_nav.get(): b.config(bg="#F5F5F5")
+                b.left_bar.config(bg="#F5F5F5" if i != selected_nav.get() else "#4A90D9")
+
+            btn.bind("<Enter>", _enter)
+            btn.bind("<Leave>", _leave)
+            btn.bind("<Button-1>", lambda e, _i=i: _switch_page(_i))
+
+        # 初始化选中态
+        nav_btns[0].config(bg="#FFFFFF", font=("Microsoft YaHei UI", 10, "bold"))
+        nav_btns[0].left_bar.config(bg="#4A90D9")
+        sidebar.config(bg="#E8E8E8")
+
+        # ── 右侧内容区 ──
+        content_area = tk.Frame(top, bg="#FFFFFF")
+        content_area.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=20, pady=16)
+
+        # 页面标题容器
+        title_var = tk.StringVar(value=self.t("stg_nav_general"))
+        title_label = tk.Label(content_area, textvariable=title_var,
+                               bg="#FFFFFF", fg=TEXT_PRIMARY,
+                               font=("Microsoft YaHei UI", 15), anchor="w")
+        title_label.pack(fill=tk.X, pady=(0, 12))
+
+        # 分隔线
+        sep_line = tk.Frame(content_area, bg="#E0E0E0", height=1)
+        sep_line.pack(fill=tk.X, pady=(0, 16))
+
+        content_frame = tk.Frame(content_area, bg="#FFFFFF")
+        content_frame.pack(fill=tk.BOTH, expand=True)
+
+        # ═══ 设置项的值变量 ═══
+        lang_code_map = {v: k for k, v in I18n.LANGUAGES.items()}
+        lang_display_map = I18n.LANGUAGES
+        lang_var = tk.StringVar(value=lang_display_map.get(self.i18n.lang, lang_display_map["zh_CN"]))
+        dark_mode_var = tk.BooleanVar(value=self.config.get("dark_mode", False))
+        canvas_bg_var = tk.StringVar(value=self.config.get("canvas_bg", "white"))
+        show_thumb_var = tk.BooleanVar(value=self.config.get("show_thumbnails", True))
+        startup_folder_var = tk.BooleanVar(value=self.config.get("reopen_last_folder", True))
         speed_var = tk.IntVar(value=self.slideshow_delay // 1000)
-        speed_spin = tk.Spinbox(frame, from_=1, to=30, textvariable=speed_var, width=10,
-                                font=("Microsoft YaHei UI", 10))
-        speed_spin.grid(row=3, column=0, sticky="w", pady=(0, 16))
+        antialias_var = tk.BooleanVar(value=self.config.get("antialias", True))
+        icc_var = tk.BooleanVar(value=self.config.get("icc_profile", False))
+        use_image_icc_var = tk.BooleanVar(value=self.config.get("use_image_icc", True))
+        use_monitor_icc_var = tk.BooleanVar(value=self.config.get("use_monitor_icc", False))
+        use_srgb_icc_var = tk.BooleanVar(value=self.config.get("use_srgb", True))
+        wheel_mode_var = tk.StringVar(value=self.config.get("wheel_mode", "zoom"))
+        no_confirm_del_var = tk.BooleanVar(value=self.config.get("no_confirm_delete", False))
+        del_recycle_var = tk.BooleanVar(value=self.config.get("delete_to_recycle", True))
 
-        # 启动时打开上次文件夹
-        reopen_var = tk.BooleanVar(value=self.config.get("reopen_last_folder", True))
-        cb = tk.Checkbutton(frame, text=self.t("set_startup_folder"), variable=reopen_var,
-                            bg=BG_COLOR, fg=TEXT_PRIMARY, selectcolor=BG_COLOR,
-                            activebackground=BG_COLOR, font=("Microsoft YaHei UI", 10))
-        cb.grid(row=4, column=0, sticky="w", pady=(0, 20))
+        # ═══ 辅助：创建一行设置项 ═══
+        def make_row(parent, label_text, widget, hint=None):
+            row_f = tk.Frame(parent, bg="#FFFFFF")
+            row_f.pack(fill=tk.X, pady=6)
+            lbl = tk.Label(row_f, text=label_text, bg="#FFFFFF", fg=TEXT_PRIMARY,
+                          font=("Microsoft YaHei UI", 10), anchor="w", width=16)
+            lbl.pack(side=tk.LEFT)
+            widget.pack(side=tk.RIGHT)
+            return row_f
 
-        # 按钮
-        btn_frame = tk.Frame(frame, bg=BG_COLOR)
-        btn_frame.grid(row=5, column=0, sticky="e")
-        tk.Button(btn_frame, text=self.t("set_close"), command=top.destroy,
-                  bg=PANEL_COLOR, fg=TEXT_PRIMARY, relief=tk.FLAT,
-                  font=("Microsoft YaHei UI", 10), padx=16, pady=6).pack(side=tk.RIGHT, padx=(8, 0))
-        tk.Button(btn_frame, text=self.t("set_ok"),
-                  command=lambda: self._apply_settings(top, lang_var.get(), speed_var.get(), reopen_var.get()),
-                  bg=ACCENT_COLOR, fg="#FFFFFF", relief=tk.FLAT,
-                  font=("Microsoft YaHei UI", 10), padx=16, pady=6).pack(side=tk.RIGHT)
+        def make_switch(parent, label_text, var, hint=None):
+            sw = tk.Checkbutton(parent, variable=var, bg="#FFFFFF",
+                                activebackground="#FFFFFF", selectcolor="#FFFFFF",
+                                relief=tk.FLAT, bd=0, highlightthickness=0)
+            sw.switch_var = var
+            return make_row(parent, label_text, sw, hint)
 
-    def _apply_settings(self, dialog, lang_display: str, speed: int, reopen: bool):
-        # 反查语言代码
-        code_map = {v: k for k, v in I18n.LANGUAGES.items()}
-        lang_code = code_map.get(lang_display, self.i18n.lang)
+        # ═══ 页面构建器 ═══
+        def build_general():
+            title_var.set(self.t("stg_nav_general"))
+            # 语言
+            lf1 = tk.LabelFrame(content_frame, text="", bg="#FFFFFF", bd=0)
+            lf1.pack(fill=tk.X, padx=4)
+            lang_cbo = ttk.Combobox(lf1, textvariable=lang_var,
+                                    values=list(lang_display_map.values()),
+                                    state="readonly", width=16)
+            make_row(lf1, self.t("stg_lang"), lang_cbo)
 
-        self.slideshow_delay = speed * 1000
-        self.config["slideshow_speed"] = speed
-        self.config["reopen_last_folder"] = reopen
-        save_config(self.config)
+            # 深色模式
+            make_switch(lf1, self.t("stg_dark_mode"), dark_mode_var)
 
-        dialog.destroy()
-        if lang_code != self.i18n.lang:
-            self.change_language(lang_code)
+            # 画布背景
+            bg_combo = ttk.Combobox(lf1, textvariable=canvas_bg_var,
+                                    values=[self.t("stg_bg_checkerboard"),
+                                            self.t("stg_bg_white"), self.t("stg_bg_black")],
+                                    state="readonly", width=16)
+            make_row(lf1, self.t("stg_canvas_bg"), bg_combo)
+
+            # 显示缩略图
+            make_switch(lf1, self.t("stg_show_thumb"), show_thumb_var)
+
+            # 启动时打开上次文件夹
+            make_switch(lf1, self.t("stg_startup_folder"), startup_folder_var)
+
+            # 幻灯片速度
+            spd_spin = tk.Spinbox(lf1, from_=1, to=30, textvariable=speed_var,
+                                   width=12, font=("Microsoft YaHei UI", 9))
+            make_row(lf1, self.t("stg_slideshow_speed"), spd_spin)
+
+        def build_image():
+            title_var.set(self.t("stg_nav_image"))
+            lf = tk.LabelFrame(content_frame, text="", bg="#FFFFFF", bd=0)
+            lf.pack(fill=tk.X, padx=4)
+            make_switch(lf, self.t("stg_antialias"), antialias_var)
+
+            # ICC 主开关
+            icc_sw_frame = make_switch(lf, self.t("stg_icc_profile"), icc_var)
+            # 子选项（缩进）
+            sub_lf = tk.Frame(lf, bg="#FFFFFF")
+            sub_lf.pack(fill=tk.X, padx=(24, 0))
+            make_switch(sub_lf, self.t("stg_use_image_icc"), use_image_icc_var)
+            make_switch(sub_lf, self.t("stg_use_monitor_icc"), use_monitor_icc_var)
+            make_switch(sub_lf, self.t("stg_use_srgb"), use_srgb_icc_var)
+
+        def build_actions():
+            title_var.set(self.t("stg_nav_actions"))
+            lf = tk.LabelFrame(content_frame, text="", bg="#FFFFFF", bd=0)
+            lf.pack(fill=tk.X, padx=4)
+
+            # 鼠标滚轮
+            wheel_cbo = ttk.Combobox(lf, textvariable=wheel_mode_var,
+                                     values=[self.t("stg_wheel_zoom"), self.t("stg_wheel_switch")],
+                                     state="readonly", width=16)
+            make_row(lf, self.t("stg_mouse_wheel"), wheel_cbo)
+
+            # 删除不提示
+            make_switch(lf, self.t("stg_no_confirm_del"), no_confirm_del_var)
+
+            # 回收站
+            make_switch(lf, self.t("stg_del_to_recycle"), del_recycle_var)
+
+            # 提示文字
+            hint_lbl = tk.Label(lf, text=self.t("stg_del_recycle_hint"),
+                               bg="#FFFFFF", fg="#999999",
+                               font=("Microsoft YaHei UI", 8),
+                               anchor="w", wraplength=420, justify=tk.LEFT)
+            hint_lbl.pack(fill=tk.X, pady=(6, 0))
+
+        def build_shortcuts():
+            title_var.set(self.t("stg_nav_shortcuts"))
+            lf = tk.Frame(content_frame, bg="#FFFFFF")
+            lf.pack(fill=tk.BOTH, expand=True, padx=4)
+
+            shortcuts = [
+                ("stk_open_img",     "Ctrl + O"),
+                ("stk_open_loc",     "Ctrl + Shift + O"),
+                ("stk_prev",         "\u2190 / Left"),
+                ("stk_next",         "\u2192 / Right"),
+                ("stk_zoom_in",      "\u25B1 / \u2191"),
+                ("stk_zoom_out",     "Ctrl + -"),
+                ("stk_fit_window",   "Ctrl + 0"),
+                ("stk_actual_size",  "Ctrl + 1"),
+                ("stk_rotate_right", "Ctrl + R"),
+                ("stk_rotate_left",  "Ctrl + Shift + R"),
+                ("stk_delete",       "Delete"),
+                ("stk_settings",     "Ctrl + ,"),
+                ("stk_fullscreen",   "F11"),
+                ("stk_exit",         "Esc"),
+            ]
+
+            for key, accel in shortcuts:
+                row = tk.Frame(lf, bg="#FFFFFF")
+                row.pack(fill=tk.X, pady=3)
+                tk.Label(row, text=self.t(key), bg="#FFFFFF", fg=TEXT_PRIMARY,
+                        font=("Microsoft YaHei UI", 10), anchor="w").pack(side=tk.LEFT)
+                tk.Label(row, text=accel, bg="#FFFFFF", fg="#888888",
+                        font=("Microsoft YaHei UI", 10)).pack(side=tk.RIGHT)
+
+        def build_about():
+            title_var.set(self.t("stg_nav_about"))
+            lf = tk.Frame(content_frame, bg="#FFFFFF")
+            lf.pack(fill=tk.X, padx=4)
+
+            # 标题
+            tk.Label(lf, text=f"{APP_TITLE}", bg="#FFFFFF", fg=TEXT_PRIMARY,
+                    font=("Microsoft YaHei UI", 13, "bold"), anchor="w").pack(fill=tk.X, pady=(0, 8))
+            tk.Label(lf, text=self.t("stg_about_desc"), bg="#FFFFFF", fg="#888888",
+                    font=("Microsoft YaHei UI", 9), anchor="w").pack(fill=tk.X)
+
+            sep2 = tk.Frame(lf, bg="#E8E8E8", height=1)
+            sep2.pack(fill=tk.X, pady=12)
+
+            # 版本号
+            r1 = tk.Frame(lf, bg="#FFFFFF"); r1.pack(fill=tk.X, pady=3)
+            tk.Label(r1, text=self.t("stg_version"), bg="#FFFFFF", fg="#888888",
+                    font=("Microsoft YaHei UI", 10), width=14, anchor="w").pack(side=tk.LEFT)
+            tk.Label(r1, text=VERSION, bg="#FFFFFF", fg=TEXT_PRIMARY,
+                    font=("Microsoft YaHei UI", 10)).pack(side=tk.RIGHT)
+
+            # 内部版本号
+            r2 = tk.Frame(lf, bg="#FFFFFF"); r2.pack(fill=tk.X, pady=3)
+            tk.Label(r2, text=self.t("stg_build"), bg="#FFFFFF", fg="#888888",
+                    font=("Microsoft YaHei UI", 10), width=14, anchor="w").pack(side=tk.LEFT)
+            tk.Label(r2, text=str(hash(VERSION) % 10000), bg="#FFFFFF", fg=TEXT_PRIMARY,
+                    font=("Microsoft YaHei UI", 10)).pack(side=tk.RIGHT)
+
+            # 更新按钮
+            upd_btn = tk.Button(lf, text=self.t("stg_check_update"),
+                               bg="#4A90D9", fg="#FFFFFF", relief=tk.FLAT,
+                               font=("Microsoft YaHei UI", 9), padx=12, pady=4,
+                               cursor="hand2", command=lambda: None)
+            upd_btn.pack(anchor="w", pady=(4, 12))
+
+            sep3 = tk.Frame(lf, bg="#E8E8E8", height=1)
+            sep3.pack(fill=tk.X, pady=8)
+
+            # 官网
+            rw = tk.Frame(lf, bg="#FFFFFF"); rw.pack(fill=tk.X, pady=3)
+            tk.Label(rw, text=self.t("stg_website"), bg="#FFFFFF", fg="#888888",
+                    font=("Microsoft YaHei UI", 10), width=14, anchor="w").pack(side=tk.LEFT)
+            site_link = tk.Label(rw, text="github.com/lldcfk-xiaohao/ImageViewer",
+                                bg="#FFFFFF", fg="#4A90D9", font=("Microsoft YaHei UI", 9),
+                                cursor="hand2")
+            site_link.pack(side=tk.RIGHT)
+            site_link.bind("<Button-1>",
+                           lambda e: os.startfile("https://github.com/lldcfk-xiaohao/ImageViewer"))
+
+            # QQ群
+            rq = tk.Frame(lf, bg="#FFFFFF"); rq.pack(fill=tk.X, pady=3)
+            tk.Label(rq, text=self.t("stg_qq_group"), bg="#FFFFFF", fg="#888888",
+                    font=("Microsoft YaHei UI", 10), width=14, anchor="w").pack(side=tk.LEFT)
+            qq_link = tk.Label(rq, text="792145673",
+                              bg="#FFFFFF", fg="#4A90D9", font=("Microsoft YaHei UI", 9),
+                              cursor="hand2")
+            qq_link.pack(side=tk.RIGHT)
+            qq_link.bind("<Button-1>",
+                        lambda e: os.startfile("https://qm.qq.com/q/792145673"))
+
+        page_builders = [build_general, build_image, build_actions, build_shortcuts, build_about]
+
+        # 首次渲染默认页面
+        build_general()
+
+        # ═══ 应用设置 ═══
+        def apply_all():
+            # 反查语言代码
+            new_lang_display = lang_var.get()
+            new_lang_code = lang_code_map.get(new_lang_display, self.i18n.lang)
+
+            self.slideshow_delay = speed_var.get() * 1000
+            self.config.update({
+                "language": new_lang_code,
+                "dark_mode": dark_mode_var.get(),
+                "canvas_bg": canvas_bg_var.get(),
+                "show_thumbnails": show_thumb_var.get(),
+                "reopen_last_folder": startup_folder_var.get(),
+                "slideshow_speed": speed_var.get(),
+                "antialias": antialias_var.get(),
+                "icc_profile": icc_var.get(),
+                "use_image_icc": use_image_icc_var.get(),
+                "use_monitor_icc": use_monitor_icc_var.get(),
+                "use_srgb": use_srgb_icc_var.get(),
+                "wheel_mode": wheel_mode_var.get(),
+                "no_confirm_delete": no_confirm_del_var.get(),
+                "delete_to_recycle": del_recycle_var.get(),
+            })
+            save_config(self.config)
+            top.destroy()
+
+            if new_lang_code != self.i18n.lang:
+                self.change_language(new_lang_code)
+
+        # 底部操作按钮
+        btn_row = tk.Frame(content_area, bg="#FFFFFF")
+        btn_row.pack(fill=tk.X, pady=(16, 0))
+
+        # 取消按钮
+        cancel_btn = tk.Button(btn_row, text=self.t("set_close"),
+                              command=top.destroy, bg=PANEL_COLOR, fg=TEXT_PRIMARY,
+                              relief=tk.FLAT, font=("Microsoft YaHei UI", 9),
+                              cursor="hand2", bd=0, padx=16, pady=6)
+        cancel_btn.pack(side=tk.RIGHT, padx=(8, 0))
+
+        # 确定按钮
+        ok_btn = tk.Button(btn_row, text=self.t("set_ok"),
+                          command=apply_all, bg=ACCENT_COLOR, fg="#FFFFFF",
+                          relief=tk.FLAT, font=("Microsoft YaHei UI", 9),
+                          cursor="hand2", bd=0, padx=16, pady=6)
+        ok_btn.pack(side=tk.RIGHT)
 
     # ═══════════════════ 信息 & 删除 ═══════════════════
 
